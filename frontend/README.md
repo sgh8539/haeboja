@@ -3,16 +3,10 @@
 ### 1. Page
 
 1. homepage
-
 2. Loginpage
-
 3. ItemListPage
-
 4. detailPage
-
 5. more and my Page
-
-   
 
 ### 2. Component
 
