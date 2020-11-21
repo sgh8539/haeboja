@@ -3,18 +3,13 @@
 ### 1. Page
 
 1. homepage
-
 2. Loginpage
-
 3. ItemListPage
-
 4. detailPage
-
 5. more and my Page
 
-   
-
 ### 2. Component
+
 
 
 
@@ -24,4 +19,6 @@
 2. 지도 API(KaKao)
 3. 결재API
 4. 휴대폰 인증
-5. 
+
+### 공부할 것
+1. media query
