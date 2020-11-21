@@ -1,15 +1,19 @@
 // single pages
 import homePage from '../view/pages/HomePage.vue'
-
-import { routePropResolver } from './util'
-import { DOMAIN_TITLE } from '../.env'
+import loginPage from '../view/pages/loginPage.vue'
 
 export const routes = [
   {
     path: '/',
     name: 'homepage',
     component: homePage,
-    meta: { title: `${DOMAIN_TITLE} | home` }
+    meta: { title: 'title' }
+  },
+  {
+    path: '/login',
+    name: 'loginpage',
+    component: loginPage,
+    meta: { title: 'login' }
   }
   // {
   //   path: '/news',
