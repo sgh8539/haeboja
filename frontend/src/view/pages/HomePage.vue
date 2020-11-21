@@ -1,22 +1,17 @@
 <template>
   <div>
-  Helloworld
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'HomePage',
-
   components: {
   },
-
   data () {
     return {
     }
   },
-
   methods: {
   }
 }
