@@ -2,6 +2,7 @@ package org.haeboja.backend.controller;
 
 import org.haeboja.backend.dao.accommodation.AccommodationRepository;
 import org.haeboja.backend.dto.Accommodation;
+import org.haeboja.backend.service.AccommodationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,41 +15,41 @@ import java.util.List;
 public class AccommodationController {
 
     @Autowired
-    private AccommodationRepository accommodationRepo;
+    private AccommodationService accommodationService;
 
     @GetMapping("/")
     List<Accommodation> getMotels() {
-        return accommodationRepo.findByType("motel");
+        return accommodationService.getAccommodationsByType("motel");
     }
 
     @GetMapping("/2")
     List<Accommodation> getHotels() {
-        return accommodationRepo.findByType("hotel");
+        return accommodationService.getAccommodationsByType("hotel");
     }
 
     @GetMapping("/3")
     List<Accommodation> getPensions() {
-        return accommodationRepo.findByType("pension");
+        return accommodationService.getAccommodationsByType("pension");
     }
 
     @GetMapping("/4")
     List<Accommodation> getResorts() {
-        return accommodationRepo.findByType("resort");
+        return accommodationService.getAccommodationsByType("resort");
     }
 
     @GetMapping("/5")
     List<Accommodation> getCampings() {
-        return accommodationRepo.findByType("camping");
+        return accommodationService.getAccommodationsByType("camping");
     }
 
     @GetMapping("/6")
     List<Accommodation> getGuestHouses() {
-        return accommodationRepo.findByType("guestHouse");
+        return accommodationService.getAccommodationsByType("guestHouse");
     }
 
     @GetMapping("/7")
     List<Accommodation> getHanoks() {
-        return accommodationRepo.findByType("hanok");
+        return accommodationService.getAccommodationsByType("hanok");
     }
 
 }
