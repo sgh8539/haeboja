@@ -13,7 +13,6 @@
     </UiModal>
 
     <UiBaseIcon width="40px" height="40px" color="blue" iconName="done" @click="onClickIcon"/>
-
     <UiInputText
       v-model="msg"
       placeholder="Enter message"
