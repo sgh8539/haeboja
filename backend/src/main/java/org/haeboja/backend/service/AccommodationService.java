@@ -14,9 +14,13 @@ public class AccommodationService {
     AccommodationRepository accommodationRepository;
 
     @Autowired
-    Accommodation   accommodation;
+    Accommodation accommodation;
 
     public List<Accommodation> getAccommodationsByType(String type) {
         return accommodationRepository.findByType(type);
+    }
+
+    public Accommodation getAccommodationsById(long id) {
+        return accommodationRepository.findById(id);
     }
 }
