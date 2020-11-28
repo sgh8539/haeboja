@@ -13,8 +13,7 @@ public class AccommodationService {
     @Autowired
     AccommodationRepository accommodationRepository;
 
-    @Autowired
-    Accommodation accommodation;
+
 
     public List<Accommodation> getAccommodationsByType(String type) {
         return accommodationRepository.findByType(type);
