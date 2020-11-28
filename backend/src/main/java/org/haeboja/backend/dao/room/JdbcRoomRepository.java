@@ -47,7 +47,22 @@ public class JdbcRoomRepository implements RoomRepository {
     }
 
     @Override
-    public List<Room> getRoomsByHouseId(String houseId) {
+    public int getLowestRoomPriceByHouseId(long houseId) {
+        List<Room> rooms = getRoomsByHouseId(houseId);
+        int lowestPrice = Integer.MAX_VALUE;
+        for (Room room: rooms) {
+            if (room.getNightStayPrice() < lowestPrice) {
+                lowestPrice = room.getNightStayPrice();
+            }
+            if (room.getDayStayPrice() != 0 && room.getDayStayPrice() < lowestPrice) {
+                lowestPrice = room.getDayStayPrice();
+            }
+        }
+        return lowestPrice;
+    }
+
+    @Override
+    public List<Room> getRoomsByHouseId(long houseId) {
         return jdbcTemplate.query(
                 "select * from room where houseId = ?",
                 new Object[]{houseId},

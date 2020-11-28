@@ -4,6 +4,7 @@ import org.haeboja.backend.dao.accommodation.AccommodationRepository;
 import org.haeboja.backend.dto.Accommodation;
 import org.haeboja.backend.dto.AccommodationDetail;
 import org.haeboja.backend.dto.Room;
+import org.haeboja.backend.dto.SimpleAccommodation;
 import org.haeboja.backend.service.AccommodationService;
 import org.haeboja.backend.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,50 +27,48 @@ public class AccommodationController {
     private RoomService roomService;
 
     @GetMapping("/search/")
-    List<Accommodation> getMotels() {
-        return accommodationService.getAccommodationsByType("motel");
+    List<SimpleAccommodation> getMotels() {
+        return accommodationService.getSimpleAccommodationsByType("motel");
     }
 
     @GetMapping("/search/2")
-    List<Accommodation> getHotels() {
-        return accommodationService.getAccommodationsByType("hotel");
+    List<SimpleAccommodation> getHotels() {
+        return accommodationService.getSimpleAccommodationsByType("hotel");
     }
 
     @GetMapping("/search/3")
-    List<Accommodation> getPensions() {
-        return accommodationService.getAccommodationsByType("pension");
+    List<SimpleAccommodation> getPensions() {
+        return accommodationService.getSimpleAccommodationsByType("pension");
     }
 
     @GetMapping("/search/4")
-    List<Accommodation> getResorts() {
-        return accommodationService.getAccommodationsByType("resort");
+    List<SimpleAccommodation> getResorts() {
+        return accommodationService.getSimpleAccommodationsByType("resort");
     }
 
     @GetMapping("/search/5")
-    List<Accommodation> getCampings() {
-        return accommodationService.getAccommodationsByType("camping");
+    List<SimpleAccommodation> getCampings() {
+        return accommodationService.getSimpleAccommodationsByType("camping");
     }
 
     @GetMapping("/search/6")
-    List<Accommodation> getGuestHouses() {
-        return accommodationService.getAccommodationsByType("guestHouse");
+    List<SimpleAccommodation> getGuestHouses() {
+        return accommodationService.getSimpleAccommodationsByType("guestHouse");
     }
 
     @GetMapping("/search/7")
-    List<Accommodation> getHanoks() {
-        return accommodationService.getAccommodationsByType("hanok");
+    List<SimpleAccommodation> getHanoks() {
+        return accommodationService.getSimpleAccommodationsByType("hanok");
     }
 
     @GetMapping("/detail")
     AccommodationDetail getRoomDetail(@RequestParam("ano") long accommodationId, @RequestParam("adcno") String accommodationType, @RequestParam("sel_date") Date selDate, @RequestParam("sel_date2") Date selDate2) {
-
-
         // 숙소 정보 가져오기
         Accommodation accommodation = accommodationService.getAccommodationsById(accommodationId);
         // 숙소 이벤트 가져오기
         //accommodationDetailInfo.event = eventService.getEventByHouseId();
         // 객실 리스트 가져오기
-        List<Room> rooms = roomService.getRoomsByHouseId(String.valueOf(accommodationId), selDate, selDate2);
+        List<Room> rooms = roomService.getRoomsByHouseId(accommodationId, selDate, selDate2);
 
         AccommodationDetail accommodationDetailInfo = new AccommodationDetail(accommodation, rooms);
 

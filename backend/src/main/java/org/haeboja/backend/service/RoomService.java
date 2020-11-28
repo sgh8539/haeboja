@@ -16,7 +16,7 @@ public class RoomService {
     @Autowired
     Room room;
 
-    public List<Room> getRoomsByHouseId(String houseId, Date selDate, Date selDate2) {
+    public List<Room> getRoomsByHouseId(long houseId, Date selDate, Date selDate2) {
         /*List<Room> rooms = roomRepository.getRoomsByHouseId(houseId);
         Map<String, String> returnValue = new HashMap<String, String>();
 

@@ -7,5 +7,7 @@ import java.util.List;
 public interface RoomRepository {
     long save(Room room);
 
-    List<Room> getRoomsByHouseId(String houseId);
+    List<Room> getRoomsByHouseId(long houseId);
+
+    int getLowestRoomPriceByHouseId(long houseId);
 }
