@@ -1,3 +1,23 @@
+/*ÀüÃ¼Àû*/
+p {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+b{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+/*loginPage*/
 .loginPage{
   font-size: 15px;
   line-height: 26px;
@@ -279,3 +299,27 @@ ul ul {
 }
 
 /*footer*/
+.footer {
+  display: block;
+  overflow: hidden;
+  clear: both;
+  position: relative;
+  margin-top: 120px;
+  padding: 63px 31px 40px 31px !important;/*padding: 23px 16px 16px 16px !important;*/
+  border-top: 1px solid rgba(0,0,0,0.08);
+  background: rgb(245,245,245);
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(0,0,0,0.38);
+  box-sizing: border-box;
+}
+address {
+  display: block;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
