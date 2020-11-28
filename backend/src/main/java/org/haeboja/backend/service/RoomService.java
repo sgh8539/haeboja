@@ -39,9 +39,9 @@ public class RoomService {
 
         // 대실, 숙박 가능 여부 추가 - 예약 Service 만든 후 수정
         for(Room room: roomRepository.getRoomsByHouseId(houseId)) {
-            room.setdayStayFlag(true);
+            room.setDayStayFlag(true);
             if(room.getStyle().equals(""))
-                room.setnightStayFlag(true);
+                room.setNightStayFlag(true);
             rooms.add(room);
         }
 
