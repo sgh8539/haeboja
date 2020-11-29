@@ -1,11 +1,9 @@
 package org.haeboja.backend.controller;
 
 import org.haeboja.backend.dao.accommodation.AccommodationRepository;
-import org.haeboja.backend.dto.Accommodation;
-import org.haeboja.backend.dto.AccommodationDetail;
-import org.haeboja.backend.dto.Room;
-import org.haeboja.backend.dto.SimpleAccommodation;
+import org.haeboja.backend.dto.*;
 import org.haeboja.backend.service.AccommodationService;
+import org.haeboja.backend.service.EventService;
 import org.haeboja.backend.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +23,9 @@ public class AccommodationController {
 
     @Autowired
     private RoomService roomService;
+
+    @Autowired
+    private EventService eventService;
 
     @GetMapping("/search/")
     List<SimpleAccommodation> getMotels() {
@@ -63,14 +64,11 @@ public class AccommodationController {
 
     @GetMapping("/detail")
     AccommodationDetail getRoomDetail(@RequestParam("ano") long accommodationId, @RequestParam("adcno") String accommodationType, @RequestParam("sel_date") Date selDate, @RequestParam("sel_date2") Date selDate2) {
-        // 숙소 정보 가져오기
         Accommodation accommodation = accommodationService.getAccommodationsById(accommodationId);
-        // 숙소 이벤트 가져오기
-        //accommodationDetailInfo.event = eventService.getEventByHouseId();
-        // 객실 리스트 가져오기
+        List<Event> events = eventService.getEventsByHouseId(accommodationId);
         List<Room> rooms = roomService.getRoomsByHouseId(accommodationId, selDate, selDate2);
 
-        AccommodationDetail accommodationDetailInfo = new AccommodationDetail(accommodation, rooms);
+        AccommodationDetail accommodationDetailInfo = new AccommodationDetail(accommodation, events, rooms);
 
         return accommodationDetailInfo;
     }
