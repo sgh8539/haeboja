@@ -1,4 +1,23 @@
-/*¿¸√º¿˚*/
+/*normalize*/
+ul, ol, li {
+  list-style: none;
+}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+html, body {
+  font-family: "Apple SD Gothic Neo","ÎßëÏùÄ Í≥†Îîï","Malgun Gothic",sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  color: rgba(0,0,0,0.87);
+  -webkit-text-size-adjust: none;
+}
 p {
   display: block;
   margin: 0;
@@ -17,7 +36,7 @@ b{
   box-sizing: border-box;
   font-weight: bold;
 }
-/*loginPage*/
+/*login Page*/
 .loginPage{
   font-size: 15px;
   line-height: 26px;
@@ -66,8 +85,98 @@ b{
   border: none;
 }
 
+/*<<<<<<< HEAD*/
+/*homePage*/
+.main_spot {
+  height: 580px;
+  background: #fff url(../image/web_v3/mainspot_200703.png) 50% 100% no-repeat;
+  background-size: 924px auto;
+}
+.main_link {
+  overflow: hidden;
+  padding: 32px 0 29px 41px;
+  background: rgb(253,253,253);
+}
+.main_link li {
+  float: left;
+  width: 109px;
+}
+.main_link ul {
+  overflow: hidden;
+  width: 1024px;
+  margin: 0 auto;
+}
+.main_link li a {
+  display: block;
+  height: 107px;
+  font-size: 18px;
+  color: rgba(0,0,0,0.56);
+  text-align: center;
+}
+.main_link li a span {
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+}
+.main_link li a p {
+  height: auto;
+  padding-top: 14px;
+}
+.main_link li a {
+  display: block;
+  height: 107px;
+  font-size: 18px;
+  color: rgba(0,0,0,0.56);
+  text-align: center;
+}
+.ico_01 {
+  background: url(../image/web_v3/ico_category_180801.png) -144px -72px no-repeat;
+  background-size: 216px auto;
+}
+.ico_02 {
+  background: url(../image/web_v3/ico_category_180801.png) -144px 0 no-repeat;
+  background-size: 216px auto;
+}
+
+.ico_03 {
+  background: url(../image/web_v3/ico_category_180801.png) -72px -144px no-repeat;
+  background-size: 216px auto;
+}
+
+.ico_04 {
+  background: url(../image/web_v3/ico_category_180801.png) -144px -144px no-repeat;
+  background-size: 216px auto;
+}
+
+.ico_05 {
+  background: url(../image/web_v3/ico_category_180801.png) 0 -72px no-repeat;
+  background-size: 216px auto;
+}
+
+.ico_06 {
+  background: url(../image/web_v3/ico_category_180801.png) 0 0 no-repeat;
+  background-size: 216px auto;
+}
+
+.ico_07 {
+  background: url(../image/web_v3/ico_category_180801.png) -72px -72px no-repeat;
+  background-size: 216px auto;
+}
+
+.ico_08 {
+  background: url(../image/web_v3/ico_category_180801.png) 0 -144px no-repeat;
+  background-size: 216px auto;
+}
+
+.ico_09 {
+  background: url(../image/web_v3/ico_category_180801.png) -72px 0 no-repeat;
+  background-size: 216px auto;
+}
+
+/*=======*/
 /*header*/
-/*width 1024 πÃ∏∏¿œ ∂ß CSS, πËƒ° ¥ﬁ∂Û¡¸*/
+/*width 1024 ÎØ∏ÎßåÏùº Îïå CSS, Î∞∞Ïπò Îã¨ÎùºÏßê*/
 div {
   margin: 0;
   padding: 0;
@@ -111,7 +220,7 @@ a:-webkit-any-link {
   background: none;
   margin: 0 auto;
 }
-.header section h1 {  /*1024 πÃ∏∏¿œ ∂ß ∑Œ∞Ì ∞°øÓµ•¡§∑ƒ*/
+.header section h1 {  /*1024 ÎØ∏ÎßåÏùº Îïå Î°úÍ≥† Í∞ÄÏö¥Îç∞Ï†ïÎ†¨*/
   display: block;
   position: absolute;
   top: 26px;
@@ -143,7 +252,7 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 0;
-  font-family: "Apple SD Gothic Neo","∏º¿∫ ∞ÌµÒ","∏º¿∫∞ÌµÒ","Malgun Gothic",sans-serif;
+  font-family: "Apple SD Gothic Neo","ÎßëÏùÄ Í≥†Îîï","ÎßëÏùÄÍ≥†Îîï","Malgun Gothic",sans-serif;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
@@ -189,12 +298,6 @@ li {
 }
 button span {
   position: relative;
-}
-span {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
 }
 ul ul {
   list-style-type: circle;
@@ -299,6 +402,7 @@ ul ul {
 }
 
 /*footer*/
+/*<<<<<<< HEAD*/
 .footer {
   display: block;
   overflow: hidden;
@@ -322,4 +426,8 @@ address {
   border: 0;
   box-sizing: border-box;
 }
+
+/*=======*/
+/*>>>>>>> efa2f147055ab129e77245f7187c18ae6a9f2f47*/
+/*>>>>>>> a059b2bc7c11fafd371d366a51c2f4f94dfeb1da*/
 

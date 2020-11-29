@@ -13,19 +13,6 @@ public class JdbcRoomRepository implements RoomRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-
-//    private long id;
-//    private long houseId;
-//    private String name;
-//    private String style;
-//    private int checkInTime;
-//    private int checkOutTime;
-//    private int nightStayPrice;
-//    private int closeTime;
-//    private int usageDuration;
-//    private int dayStayPrice;
-//    private String info;
-//    private int count;
     @Override
     public long save(Room room) {
         return jdbcTemplate.update(
@@ -47,7 +34,22 @@ public class JdbcRoomRepository implements RoomRepository {
     }
 
     @Override
-    public List<Room> getRoomsByHouseId(String houseId) {
+    public int getLowestRoomPriceByHouseId(long houseId) {
+        List<Room> rooms = getRoomsByHouseId(houseId);
+        int lowestPrice = Integer.MAX_VALUE;
+        for (Room room: rooms) {
+            if (room.getNightStayPrice() < lowestPrice) {
+                lowestPrice = room.getNightStayPrice();
+            }
+            if (room.getDayStayPrice() != 0 && room.getDayStayPrice() < lowestPrice) {
+                lowestPrice = room.getDayStayPrice();
+            }
+        }
+        return lowestPrice;
+    }
+
+    @Override
+    public List<Room> getRoomsByHouseId(long houseId) {
         return jdbcTemplate.query(
                 "select * from room where houseId = ?",
                 new Object[]{houseId},
