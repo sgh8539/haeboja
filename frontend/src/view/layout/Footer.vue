@@ -97,6 +97,11 @@ export default {
 .footer p {
   clear: both;
   padding: 37px 0 24px 0;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 .footer p b {
   display: inline-block;    /*display: block;*/
