@@ -25,4 +25,9 @@ public class JdbcReservationRepository implements ReservationRepository{
         );*/
     }
 
+    @Override
+    public List<Reservation> getReservationsByCustomerId(long customerId) {
+        return null;
+    }
+
 }
