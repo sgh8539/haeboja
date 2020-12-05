@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="H2 - goodchoice" uuid="eca97071-736f-489d-a37f-ecf590da9a86">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:~/goodchoice</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="default@localhost [2]" uuid="220a709b-33b7-434d-975b-91564fed515d">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:tcp://localhost:9092/default</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="goodchoice" uuid="24e9723b-7700-4bcb-99e8-470a903f3561">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:~/goodchoice</jdbc-url>
+    </data-source>
+  </component>
+</project>
