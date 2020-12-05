@@ -9,6 +9,7 @@
         <li>
           <a href="https://www.goodchoice.kr/user/login?returnUrl=my%2FreserveList">예약내역</a>
         </li>
+        <!--<li><a>더보기</a></li>-->
         <li class="over">
           <button type="button"><span>더보기</span></button>
           <ul class="list_03" style="display: none; opacity: 1;">
@@ -126,12 +127,6 @@ export default {
   margin: 0;
   font-size: 16px;
   color: rgba(0,0,0,0.87);
-}
-.gnb_pc li a {
-  display: inline-block;
-  font-size: 18px;
-  color: rgba(255,255,255,0.8);
-  letter-spacing: 0;
 }
 .gnb_pc li ul li:last-child {
   margin-bottom: 0;
