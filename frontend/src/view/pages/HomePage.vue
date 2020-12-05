@@ -75,7 +75,6 @@ export default {
         item6: { title: '캠핑/글램핑', imageClass: 'ico_06' },
         item7: { title: '한옥', imageClass: 'ico_07' },
         item8: { title: '내주변', imageClass: 'ico_08' },
-<<<<<<< HEAD
         item9: { title: '페이백', imageClass: 'ico_09' }
       },
       recommendItem: [
@@ -94,10 +93,6 @@ export default {
           index:1
         }
       ],
-=======
-        item9: { title: '한옥', imageClass: 'ico_09' }
-      }
->>>>>>> 3cea5794b5cd13063d022148ee92871b74719483
     }
   },
   methods: {

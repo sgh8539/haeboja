@@ -21,9 +21,6 @@ html, body {
   color: rgba(0,0,0,0.87);
   -webkit-text-size-adjust: none;
 }
-<<<<<<< HEAD
-
-=======
 b{
   margin: 0;
   padding: 0;
@@ -47,7 +44,6 @@ a:-webkit-any-link {
   cursor: pointer;
   /*text-decoration: underline;*/
 }
->>>>>>> 3cea5794b5cd13063d022148ee92871b74719483
 /*login Page*/
 .loginPage{
   font-size: 15px;
@@ -96,11 +92,6 @@ a:-webkit-any-link {
   width: 100%;
   border: none;
 }
-
-<<<<<<< HEAD
-=======
-/*<<<<<<< HEAD*/
->>>>>>> 3cea5794b5cd13063d022148ee92871b74719483
 /*homePage*/
 .main_spot {
   height: 580px;
@@ -181,8 +172,6 @@ a:-webkit-any-link {
   background: url(../image/web_v3/ico_category_180801.png) -72px 0 no-repeat;
   background-size: 216px auto;
 }
-
-<<<<<<< HEAD
 .recommend {
   width: 1024px;
   margin: 0 auto;
@@ -310,11 +299,7 @@ div {
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-=======
-/*=======*/
 /*header*/
-/*width 1024 미만일 때 CSS, 배치 달라짐*/
->>>>>>> 3cea5794b5cd13063d022148ee92871b74719483
 .header section h1 a {
   display: block;
   text-indent: -9999px;
@@ -342,11 +327,7 @@ div {
   background: none;
   margin: 0 auto;
 }
-<<<<<<< HEAD
-.header section h1 {  /*1024 �̸��� �� �ΰ� �������*/
-=======
 .header section h1 {  /*1024 미만일 때 로고 가운데정렬*/
->>>>>>> 3cea5794b5cd13063d022148ee92871b74719483
   display: block;
   position: absolute;
   top: 26px;
@@ -378,11 +359,8 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 0;
-<<<<<<< HEAD
-  font-family: "Apple SD Gothic Neo","���� ����","��������","Malgun Gothic",sans-serif;
-=======
+/*  font-family: "Apple SD Gothic Neo","���� ����","��������","Malgun Gothic",sans-serif;*/
   font-family: "Apple SD Gothic Neo","맑은 고딕","맑은고딕","Malgun Gothic",sans-serif;
->>>>>>> 3cea5794b5cd13063d022148ee92871b74719483
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
@@ -532,9 +510,7 @@ ul ul {
 }
 
 /*footer*/
-<<<<<<< HEAD
-=======
-/*<<<<<<< HEAD*/
+
 .footer {
   display: block;
   overflow: hidden;
@@ -558,9 +534,3 @@ address {
   border: 0;
   box-sizing: border-box;
 }
-
-/*=======*/
-/*>>>>>>> efa2f147055ab129e77245f7187c18ae6a9f2f47*/
-/*>>>>>>> a059b2bc7c11fafd371d366a51c2f4f94dfeb1da*/
-
->>>>>>> 3cea5794b5cd13063d022148ee92871b74719483
