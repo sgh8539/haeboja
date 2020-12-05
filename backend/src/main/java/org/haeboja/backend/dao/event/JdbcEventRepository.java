@@ -4,9 +4,11 @@ import org.haeboja.backend.dto.Event;
 import org.haeboja.backend.dto.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class JdbcEventRepository implements EventRepository {
 
     @Autowired

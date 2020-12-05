@@ -1,7 +1,10 @@
 package org.haeboja.backend.dto;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class Coupon {
     private long id;
     private String name;

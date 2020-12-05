@@ -1,7 +1,10 @@
 package org.haeboja.backend.dto;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class Room {
     private long id;
     private long houseId;
@@ -16,6 +19,8 @@ public class Room {
     private byte[] photos;
     private String info;
     private int count;
+
+    public Room() {}
 
     public Room(long id, long houseId, String name, String style, int checkInTime, int checkOutTime, int nightStayPrice, int closeTime, int usageDuration, int dayStayPrice, byte[] photos, String info, int count) {
         this.id = id;

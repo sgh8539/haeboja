@@ -1,5 +1,8 @@
 package org.haeboja.backend.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Event {
     long id;
     long houseId;

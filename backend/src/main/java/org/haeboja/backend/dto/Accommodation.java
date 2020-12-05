@@ -1,5 +1,8 @@
 package org.haeboja.backend.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Accommodation {
     private long id;
     private String type;
@@ -10,6 +13,8 @@ public class Accommodation {
     private String ownerWords;
     private byte[] photos;
     private String info;
+
+    public Accommodation() {}
 
     public Accommodation(long id,
                          String type,

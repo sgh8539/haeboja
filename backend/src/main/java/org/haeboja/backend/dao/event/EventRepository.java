@@ -1,6 +1,7 @@
 package org.haeboja.backend.dao.event;
 
 import org.haeboja.backend.dto.Event;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

@@ -13,9 +13,6 @@ public class RoomService {
     @Autowired
     RoomRepository roomRepository;
 
-    @Autowired
-    Room room;
-
     public List<Room> getRoomsByHouseId(long houseId, Date selDate, Date selDate2) {
         /*List<Room> rooms = roomRepository.getRoomsByHouseId(houseId);
         Map<String, String> returnValue = new HashMap<String, String>();
