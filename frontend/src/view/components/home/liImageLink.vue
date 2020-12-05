@@ -1,8 +1,7 @@
 <template>
   <li>
     <a href="#">
-      <span :class="linkItem.imageClass"></span>
-      <p>{{linkItem.title}}</p>
+      <span :class="linkItem.imageClass"></span><p>{{linkItem.title}}</p>
     </a>
   </li>
 </template>
