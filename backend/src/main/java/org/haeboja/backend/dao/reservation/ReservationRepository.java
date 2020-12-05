@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ReservationRepository {
     List<Reservation> getReservationCountByHouseIdAndRoomId(long houseId, long roomId);
+
+    List<Reservation> getReservationsByCustomerId(long customerId);
 }

@@ -13,19 +13,6 @@ public class JdbcRoomRepository implements RoomRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-
-//    private long id;
-//    private long houseId;
-//    private String name;
-//    private String style;
-//    private int checkInTime;
-//    private int checkOutTime;
-//    private int nightStayPrice;
-//    private int closeTime;
-//    private int usageDuration;
-//    private int dayStayPrice;
-//    private String info;
-//    private int count;
     @Override
     public long save(Room room) {
         return jdbcTemplate.update(

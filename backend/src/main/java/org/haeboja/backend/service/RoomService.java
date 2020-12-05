@@ -13,9 +13,6 @@ public class RoomService {
     @Autowired
     RoomRepository roomRepository;
 
-    @Autowired
-    Room room;
-
     public List<Room> getRoomsByHouseId(long houseId, Date selDate, Date selDate2) {
         /*List<Room> rooms = roomRepository.getRoomsByHouseId(houseId);
         Map<String, String> returnValue = new HashMap<String, String>();
@@ -39,9 +36,9 @@ public class RoomService {
 
         // 대실, 숙박 가능 여부 추가 - 예약 Service 만든 후 수정
         for(Room room: roomRepository.getRoomsByHouseId(houseId)) {
-            room.setDayStayFlag(true);
-            if(room.getStyle().equals(""))
-                room.setNightStayFlag(true);
+            //room.setDayStayFlag(true);
+            //if(room.getStyle().equals(""))
+                //room.setNightStayFlag(true);
             rooms.add(room);
         }
 

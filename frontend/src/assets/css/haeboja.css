@@ -21,7 +21,33 @@ html, body {
   color: rgba(0,0,0,0.87);
   -webkit-text-size-adjust: none;
 }
+<<<<<<< HEAD
 
+=======
+b{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  /*text-decoration: underline;*/
+}
+>>>>>>> 3cea5794b5cd13063d022148ee92871b74719483
 /*login Page*/
 .loginPage{
   font-size: 15px;
@@ -71,6 +97,10 @@ html, body {
   border: none;
 }
 
+<<<<<<< HEAD
+=======
+/*<<<<<<< HEAD*/
+>>>>>>> 3cea5794b5cd13063d022148ee92871b74719483
 /*homePage*/
 .main_spot {
   height: 580px;
@@ -152,6 +182,7 @@ html, body {
   background-size: 216px auto;
 }
 
+<<<<<<< HEAD
 .recommend {
   width: 1024px;
   margin: 0 auto;
@@ -279,18 +310,14 @@ div {
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+=======
+/*=======*/
+/*header*/
+/*width 1024 미만일 때 CSS, 배치 달라짐*/
+>>>>>>> 3cea5794b5cd13063d022148ee92871b74719483
 .header section h1 a {
   display: block;
   text-indent: -9999px;
-}
-a {
-  text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-a:-webkit-any-link {
-  color: -webkit-link;
-  cursor: pointer;
-  /*text-decoration: underline;*/
 }
 .header {
   display: block;
@@ -315,7 +342,11 @@ a:-webkit-any-link {
   background: none;
   margin: 0 auto;
 }
+<<<<<<< HEAD
 .header section h1 {  /*1024 �̸��� �� �ΰ� �������*/
+=======
+.header section h1 {  /*1024 미만일 때 로고 가운데정렬*/
+>>>>>>> 3cea5794b5cd13063d022148ee92871b74719483
   display: block;
   position: absolute;
   top: 26px;
@@ -336,7 +367,7 @@ h1 {
   border: 0;
   box-sizing: border-box;
 }
-:-webkit-any(article,aside,nav,section) h1 {
+a:-webkit-any(article,aside,nav,section) h1 {
   font-size: 1.5em;
 }
 button {
@@ -347,7 +378,11 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 0;
+<<<<<<< HEAD
   font-family: "Apple SD Gothic Neo","���� ����","��������","Malgun Gothic",sans-serif;
+=======
+  font-family: "Apple SD Gothic Neo","맑은 고딕","맑은고딕","Malgun Gothic",sans-serif;
+>>>>>>> 3cea5794b5cd13063d022148ee92871b74719483
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
@@ -393,12 +428,6 @@ li {
 }
 button span {
   position: relative;
-}
-span {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
 }
 ul ul {
   list-style-type: circle;
@@ -468,7 +497,7 @@ ul ul {
   position: absolute;
   border: none;
   text-indent: -9999px;
-  top: 27px;
+  top: 25px;
   right: 396px;
   z-index: 10;
   width: 30px;
@@ -503,3 +532,35 @@ ul ul {
 }
 
 /*footer*/
+<<<<<<< HEAD
+=======
+/*<<<<<<< HEAD*/
+.footer {
+  display: block;
+  overflow: hidden;
+  clear: both;
+  position: relative;
+  margin-top: 120px;
+  padding: 63px 31px 40px 31px !important;/*padding: 23px 16px 16px 16px !important;*/
+  border-top: 1px solid rgba(0,0,0,0.08);
+  background: rgb(245,245,245);
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(0,0,0,0.38);
+  box-sizing: border-box;
+}
+address {
+  display: block;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/*=======*/
+/*>>>>>>> efa2f147055ab129e77245f7187c18ae6a9f2f47*/
+/*>>>>>>> a059b2bc7c11fafd371d366a51c2f4f94dfeb1da*/
+
+>>>>>>> 3cea5794b5cd13063d022148ee92871b74719483

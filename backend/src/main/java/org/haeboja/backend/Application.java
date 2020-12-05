@@ -2,10 +2,12 @@ package org.haeboja.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-public class TestApplication {
+@ComponentScan("org.haeboja.backend")
+public class Application {
     public static void main(String[] args) {
-        SpringApplication.run(TestApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }

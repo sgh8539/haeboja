@@ -1,10 +1,15 @@
 package org.haeboja.backend.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Customer {
     private long id;
     private String name;
     private String nickname;
     private String phoneNumber;
+
+    public Customer() {}
 
     public Customer(String name, String nickname, String phoneNumber) {
         this.name = name;
