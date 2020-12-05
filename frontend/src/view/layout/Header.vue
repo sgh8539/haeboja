@@ -119,6 +119,7 @@ export default {
   overflow: visible !important;
   display: block;
   position: relative !important;
+  top: auto !important;
   left: auto !important;
   width: auto !important;
   height: auto !important;

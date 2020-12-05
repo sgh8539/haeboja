@@ -28,10 +28,10 @@ export default {
         item3: { title: '펜션', imageClass: 'ico_03' },
         item4: { title: '리조트', imageClass: 'ico_04' },
         item5: { title: '게스트하우스', imageClass: 'ico_05' },
-        item6: { title: '캠핑·글램핑', imageClass: 'ico_06' },
+        item6: { title: '캠핑/글램핑', imageClass: 'ico_06' },
         item7: { title: '한옥', imageClass: 'ico_07' },
         item8: { title: '내주변', imageClass: 'ico_08' },
-        item9: { title: '페이백', imageClass: 'ico_09' }
+        item9: { title: '한옥', imageClass: 'ico_09' }
       }
     }
   },
