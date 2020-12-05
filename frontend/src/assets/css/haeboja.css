@@ -44,7 +44,11 @@ a:-webkit-any-link {
   cursor: pointer;
   /*text-decoration: underline;*/
 }
-/*login Page*/
+address, caption, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+ /*login Page*/
 .loginPage{
   font-size: 15px;
   line-height: 26px;

@@ -97,7 +97,6 @@ export default {
   },
   methods: {
     getImage(numb){
-      console.log(numb)
       let a = (numb<3)? ".jpg":".png"
       return require("@/assets/image/web_v3/swipe" + numb + a)
     }

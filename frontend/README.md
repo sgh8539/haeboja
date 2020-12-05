@@ -5,6 +5,9 @@
 1. homepage
 2. Loginpage
 3. ItemListPage
+  - home
+  -search
+  -srp
 4. detailPage
 5. more and my Page
 

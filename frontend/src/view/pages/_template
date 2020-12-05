@@ -1,0 +1,22 @@
+<template>
+  <div class="content">
+  </div>
+</template>
+
+<script>
+  // import liImageLink from '../components/home/liImageLink.vue'
+
+  export default {
+    name: 'HomePage',
+    components: {
+    },
+    data () {
+      return {}
+    },
+    methods: {
+    }
+  }
+</script>
+
+<style scoped>
+</style>
