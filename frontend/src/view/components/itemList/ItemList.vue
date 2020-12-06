@@ -1,6 +1,7 @@
 <template>
   <div class="content sub_wrap">
     <div class="list_wrap">
+<!--      <select-box></select-box>-->
       <div class="product_list_area">
         <div class="title">
           <h3>지역추천</h3>
@@ -16,11 +17,13 @@
 
 <script>
   // import liImageLink from '../components/home/liImageLink.vue'
+  import SelectBox from './SelectBox'
   import ItemCard from './ItemCard.vue'
   export default {
     name: 'ItemList',
     components: {
-      ItemCard
+      ItemCard,
+      SelectBox
     },
     props:["itemList"],
     data () {

@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a href="#">
+    <a href="/#/product/home/1">
       <span :class="linkItem.imageClass"></span><p>{{linkItem.title}}</p>
     </a>
   </li>

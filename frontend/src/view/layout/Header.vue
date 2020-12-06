@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <section>
-      <h1><a href="https://www.goodchoice.kr/" title="여기어때">여기어때</a></h1> <!--이후 메인페이지 링크로 수정하기-->
+      <h1><a href="/" title="여기어때">여기어때</a></h1> <!--이후 메인페이지 링크로 수정하기-->
       <button type="button" class="btn_menu nav_open">메뉴</button>
       <button type="button" class="btn_srch srch_open" style="right: 396px;">검색</button>
       <ul class="gnb_pc" style="display: block;">
@@ -21,7 +21,7 @@
             <li><a href="https://www.goodchoice.kr/more/terms">약관 및 정책</a></li>
           </ul>
         </li>
-        <li><a href="https://www.goodchoice.kr/user/login"><span>로그인</span></a></li>
+        <li><a href="#/login"><span>로그인</span></a></li>
       </ul>
 
       <!-- Search -->
