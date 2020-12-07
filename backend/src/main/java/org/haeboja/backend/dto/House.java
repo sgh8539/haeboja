@@ -3,7 +3,7 @@ package org.haeboja.backend.dto;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Accommodation {
+public class House {
     private long id;
     private String type;
     private String style;
@@ -14,17 +14,17 @@ public class Accommodation {
     private byte[] photos;
     private String info;
 
-    public Accommodation() {}
+    public House() {}
 
-    public Accommodation(long id,
-                         String type,
-                         String style,
-                         String name,
-                         String address,
-                         double score,
-                         String ownerWords,
-                         byte[] photos,
-                         String info) {
+    public House(long id,
+                 String type,
+                 String style,
+                 String name,
+                 String address,
+                 double score,
+                 String ownerWords,
+                 byte[] photos,
+                 String info) {
         this.id = id;
         this.type = type;
         this.style = style;

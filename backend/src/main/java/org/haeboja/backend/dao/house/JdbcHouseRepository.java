@@ -1,7 +1,6 @@
-package org.haeboja.backend.dao.accommodation;
+package org.haeboja.backend.dao.house;
 
-import org.haeboja.backend.dao.accommodation.AccommodationRepository;
-import org.haeboja.backend.dto.Accommodation;
+import org.haeboja.backend.dto.House;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -9,34 +8,34 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class JdbcAccommodationRepository implements AccommodationRepository {
+public class JdbcHouseRepository implements HouseRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
 
     @Override
-    public long save(Accommodation accommodation) {
+    public long save(House house) {
         return jdbcTemplate.update(
-                "insert into accommodation (id, type, style, name, address, score, ownerWords, photos, info) values (?,?,?,?,?,?,?,?,?)",
-                accommodation.getId(),
-                accommodation.getType(),
-                accommodation.getStyle(),
-                accommodation.getName(),
-                accommodation.getAddress(),
-                accommodation.getScore(),
-                accommodation.getOwnerWords(),
-                accommodation.getPhotos(),
-                accommodation.getInfo()
+                "insert into house (id, type, style, name, address, score, ownerWords, photos, info) values (?,?,?,?,?,?,?,?,?)",
+                house.getId(),
+                house.getType(),
+                house.getStyle(),
+                house.getName(),
+                house.getAddress(),
+                house.getScore(),
+                house.getOwnerWords(),
+                house.getPhotos(),
+                house.getInfo()
         );
     }
 
     @Override
-    public List<Accommodation> findAll() {
+    public List<House> findAll() {
         return jdbcTemplate.query(
-                "select * from accommodation",
+                "select * from house",
                 (rs, rowNum) ->
-                        new Accommodation(
+                        new House(
                                 rs.getLong("id"),
                                 rs.getString("type"),
                                 rs.getString("style"),
@@ -51,12 +50,12 @@ public class JdbcAccommodationRepository implements AccommodationRepository {
     }
 
     @Override
-    public List<Accommodation> findByType(String type) {
+    public List<House> findByType(String type) {
         return jdbcTemplate.query(
-                "select * from accommodation where type = ?",
+                "select * from house where type = ?",
                 new Object[]{type},
                 (rs, rowNum) ->
-                        new Accommodation(
+                        new House(
                                 rs.getLong("id"),
                                 rs.getString("type"),
                                 rs.getString("style"),
@@ -72,12 +71,12 @@ public class JdbcAccommodationRepository implements AccommodationRepository {
     }
 
     @Override
-    public Accommodation findById(long id) {
+    public House findById(long id) {
         return jdbcTemplate.queryForObject(
-                "select * from accommodation where id = ?",
+                "select * from house where id = ?",
                 new Object[]{id},
                 (rs, rowNum) ->
-                        new Accommodation(
+                        new House(
                                 rs.getLong("id"),
                                 rs.getString("type"),
                                 rs.getString("style"),

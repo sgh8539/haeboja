@@ -1,6 +1,5 @@
 package org.haeboja.backend.dao.room;
 
-import org.haeboja.backend.dto.Accommodation;
 import org.haeboja.backend.dto.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

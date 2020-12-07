@@ -3,16 +3,16 @@ package org.haeboja.backend.dto;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SimpleAccommodation {
+public class SimpleHouse {
     private long id;
     private String name;
     private String address;
     private double score;
     private int lowestPrice;
 
-    public SimpleAccommodation() {}
+    public SimpleHouse() {}
 
-    public SimpleAccommodation(long id, String name, String address, double score, int lowerPrice) {
+    public SimpleHouse(long id, String name, String address, double score, int lowerPrice) {
         this.id = id;
         this.name = name;
         this.address = address;
