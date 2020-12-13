@@ -1,6 +1,10 @@
 package org.haeboja.backend.controller;
 
 import org.haeboja.backend.dto.*;
+import org.haeboja.backend.dto.house.House;
+import org.haeboja.backend.dto.house.HouseDetail;
+import org.haeboja.backend.dto.house.SimpleHouse;
+import org.haeboja.backend.dto.room.Room;
 import org.haeboja.backend.service.HouseService;
 import org.haeboja.backend.service.EventService;
 import org.haeboja.backend.service.RoomService;

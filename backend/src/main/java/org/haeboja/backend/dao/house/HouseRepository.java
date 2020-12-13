@@ -1,6 +1,6 @@
 package org.haeboja.backend.dao.house;
 
-import org.haeboja.backend.dto.House;
+import org.haeboja.backend.dto.house.House;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
