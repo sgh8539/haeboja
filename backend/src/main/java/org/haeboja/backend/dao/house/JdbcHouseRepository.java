@@ -1,6 +1,6 @@
 package org.haeboja.backend.dao.house;
 
-import org.haeboja.backend.dto.House;
+import org.haeboja.backend.dto.house.House;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

@@ -1,6 +1,8 @@
 package org.haeboja.backend.dao.room;
 
-import org.haeboja.backend.dto.Room;
+import org.haeboja.backend.dto.room.DayStay;
+import org.haeboja.backend.dto.room.NightStay;
+import org.haeboja.backend.dto.room.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -15,36 +17,22 @@ public class JdbcRoomRepository implements RoomRepository {
     @Override
     public long save(Room room) {
         return jdbcTemplate.update(
-                "insert into room (id, houseId, name, style, checkInTime, checkOutTime, nightStayPrice, closeTime, usageDuration, datyStayPrice, photos, info, count) values (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "insert into room (id, houseId, name, style, closeTime, usageDuration, dayStayPrice, dayStayCount, checkInTime, checkOutTime, nightStayPrice, nightStayCount, photos, info) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 room.getId(),
                 room.getHouseId(),
                 room.getName(),
                 room.getStyle(),
-                room.getCheckInTime(),
-                room.getCheckOutTime(),
-                room.getNightStayPrice(),
-                room.getCloseTime(),
-                room.getUsageDuration(),
-                room.getDayStayPrice(),
+                room.getDayStay().getCloseTime(),
+                room.getDayStay().getUsageDuration(),
+                room.getDayStay().getPrice(),
+                room.getDayStay().getCount(),
+                room.getNightStay().getCheckInTime(),
+                room.getNightStay().getCheckOutTime(),
+                room.getNightStay().getPrice(),
+                room.getNightStay().getCount(),
                 room.getPhotos(),
-                room.getInfo(),
-                room.getCount()
+                room.getInfo()
         );
-    }
-
-    @Override
-    public int getLowestRoomPriceByHouseId(long houseId) {
-        List<Room> rooms = getRoomsByHouseId(houseId);
-        int lowestPrice = Integer.MAX_VALUE;
-        for (Room room: rooms) {
-            if (room.getNightStayPrice() < lowestPrice) {
-                lowestPrice = room.getNightStayPrice();
-            }
-            if (room.getDayStayPrice() != 0 && room.getDayStayPrice() < lowestPrice) {
-                lowestPrice = room.getDayStayPrice();
-            }
-        }
-        return lowestPrice;
     }
 
     @Override
@@ -58,15 +46,20 @@ public class JdbcRoomRepository implements RoomRepository {
                                 rs.getLong("houseId"),
                                 rs.getString("name"),
                                 rs.getString("style"),
-                                rs.getInt("checkInTime"),
-                                rs.getInt("checkOutTime"),
-                                rs.getInt("nightStayPrice"),
-                                rs.getInt("closeTime"),
-                                rs.getInt("usageDuration"),
-                                rs.getInt("dayStayPrice"),
+                                new DayStay(
+                                        rs.getInt("closeTime"),
+                                        rs.getInt("usageDuration"),
+                                        rs.getInt("dayStayPrice"),
+                                        rs.getInt("dayStayCount")
+                                ),
+                                new NightStay(
+                                        rs.getInt("checkInTime"),
+                                        rs.getInt("checkOutTime"),
+                                        rs.getInt("nightStayPrice"),
+                                        rs.getInt("nightStayCount")
+                                ),
                                 rs.getBytes("photos"),
-                                rs.getString("info"),
-                                rs.getInt("count")
+                                rs.getString("info")
                         )
 
         );

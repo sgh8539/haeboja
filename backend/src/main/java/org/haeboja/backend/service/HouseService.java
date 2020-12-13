@@ -2,8 +2,8 @@ package org.haeboja.backend.service;
 
 import org.haeboja.backend.dao.house.HouseRepository;
 import org.haeboja.backend.dao.room.RoomRepository;
-import org.haeboja.backend.dto.House;
-import org.haeboja.backend.dto.SimpleHouse;
+import org.haeboja.backend.dto.house.House;
+import org.haeboja.backend.dto.house.SimpleHouse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

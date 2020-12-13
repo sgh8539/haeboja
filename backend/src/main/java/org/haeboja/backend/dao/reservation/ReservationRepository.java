@@ -1,11 +1,11 @@
 package org.haeboja.backend.dao.reservation;
 
-import org.haeboja.backend.dto.Reservation;
+import org.haeboja.backend.dto.reservation.Reservation;
 
 import java.util.List;
 
 public interface ReservationRepository {
-    List<Reservation> getReservationCountByHouseIdAndRoomId(long houseId, long roomId);
+    long save(Reservation reservation);
 
-    List<Reservation> getReservationsByCustomerId(long customerId);
+    List<Reservation> getReservationsByHouseIdAndRoomId(long houseId, long roomId);
 }

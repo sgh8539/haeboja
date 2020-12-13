@@ -1,4 +1,4 @@
-package org.haeboja.backend.dto;
+package org.haeboja.backend.dto.house;
 
 import org.springframework.stereotype.Component;
 
