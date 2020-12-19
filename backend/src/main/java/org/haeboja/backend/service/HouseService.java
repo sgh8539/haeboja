@@ -30,13 +30,17 @@ public class HouseService {
 
         for (House house : houses) {
             SimpleHouse simpleHouse = new SimpleHouse();
-            simpleHouse.setId(house.getId());
+            long houseId = house.getId();
+
+            int dayStayLowestPrice = roomRepository.getDayStayLowestPriceByHouseId(houseId);
+            int nightStayLowestPrice = roomRepository.getNightStayLowestPriceByHouseId(houseId);
+
+            simpleHouse.setId(houseId);
             simpleHouse.setName(house.getName());
             simpleHouse.setAddress(house.getAddress());
             simpleHouse.setScore(house.getScore());
-
-            int lowestPrice = roomRepository.getLowestRoomPriceByHouseId(house.getId());
-            simpleHouse.setLowestPrice(lowestPrice);
+            simpleHouse.setDayStayLowestPrice(dayStayLowestPrice);
+            simpleHouse.setNightStayLowestPrice(nightStayLowestPrice);
 
             simpleHouses.add(simpleHouse);
         }
