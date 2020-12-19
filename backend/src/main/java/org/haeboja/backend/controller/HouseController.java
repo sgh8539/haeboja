@@ -56,6 +56,7 @@ public class HouseController {
         return houseService.getSimpleHousesByType("camping");
     }
 
+
     @GetMapping("/search/6")
     List<SimpleHouse> getGuestHouses() {
         return houseService.getSimpleHousesByType("guestHouse");

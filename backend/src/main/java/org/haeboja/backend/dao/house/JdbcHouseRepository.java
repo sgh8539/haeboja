@@ -17,7 +17,7 @@ public class JdbcHouseRepository implements HouseRepository {
     @Override
     public long save(House house) {
         return jdbcTemplate.update(
-                "insert into house (id, type, style, name, address, score, ownerWords, photos, info) values (?,?,?,?,?,?,?,?,?)",
+                "insert into house (id, type, style, name, address, score, owner_words, photos, info) values (?,?,?,?,?,?,?,?,?)",
                 house.getId(),
                 house.getType(),
                 house.getStyle(),
@@ -42,7 +42,7 @@ public class JdbcHouseRepository implements HouseRepository {
                                 rs.getString("name"),
                                 rs.getString("address"),
                                 rs.getDouble("score"),
-                                rs.getString("ownerWords"),
+                                rs.getString("owner_words"),
                                 rs.getBytes("photos"),
                                 rs.getString("info")
                         )
@@ -62,7 +62,7 @@ public class JdbcHouseRepository implements HouseRepository {
                                 rs.getString("name"),
                                 rs.getString("address"),
                                 rs.getDouble("score"),
-                                rs.getString("ownerWords"),
+                                rs.getString("owner_words"),
                                 rs.getBytes("photos"),
                                 rs.getString("info")
                         )
@@ -83,7 +83,7 @@ public class JdbcHouseRepository implements HouseRepository {
                                 rs.getString("name"),
                                 rs.getString("address"),
                                 rs.getDouble("score"),
-                                rs.getString("ownerWords"),
+                                rs.getString("owner_words"),
                                 rs.getBytes("photos"),
                                 rs.getString("info")
                         )
