@@ -4,13 +4,11 @@ public class DayStay {
     private int closeTime;
     private int usageDuration;
     private int price;
-    private int count;
 
-    public DayStay(int closeTime, int usageDuration, int price, int count) {
+    public DayStay(int closeTime, int usageDuration, int price) {
         this.closeTime = closeTime;
         this.usageDuration = usageDuration;
         this.price = price;
-        this.count = count;
     }
 
     public int getCloseTime() {
@@ -37,11 +35,4 @@ public class DayStay {
         this.price = price;
     }
 
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
 }

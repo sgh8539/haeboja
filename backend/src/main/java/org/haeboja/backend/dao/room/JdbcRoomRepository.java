@@ -22,17 +22,16 @@ public class JdbcRoomRepository implements RoomRepository {
                 room.getId(),
                 room.getHouseId(),
                 room.getName(),
-                room.getStyle(),
+                room.getType(),
                 room.getDayStay().getCloseTime(),
                 room.getDayStay().getUsageDuration(),
                 room.getDayStay().getPrice(),
-                room.getDayStay().getCount(),
                 room.getNightStay().getCheckInTime(),
                 room.getNightStay().getCheckOutTime(),
                 room.getNightStay().getPrice(),
-                room.getNightStay().getCount(),
                 room.getPhotos(),
-                room.getInfo()
+                room.getInfo(),
+                room.getCount()
         );
     }
 
@@ -46,21 +45,20 @@ public class JdbcRoomRepository implements RoomRepository {
                                 rs.getLong("id"),
                                 rs.getLong("house_id"),
                                 rs.getString("name"),
-                                rs.getString("style"),
+                                rs.getInt("type"),
                                 new DayStay(
                                         rs.getInt("close_time"),
                                         rs.getInt("usage_duration"),
-                                        rs.getInt("day_stay_price"),
-                                        rs.getInt("day_stay_count")
+                                        rs.getInt("day_stay_price")
                                 ),
                                 new NightStay(
                                         rs.getInt("check_in_time"),
                                         rs.getInt("check_out_time"),
-                                        rs.getInt("night_stay_price"),
-                                        rs.getInt("night_stay_count")
+                                        rs.getInt("night_stay_price")
                                 ),
                                 rs.getBytes("photos"),
-                                rs.getString("info")
+                                rs.getString("info"),
+                                rs.getInt("count")
                         )
 
         );

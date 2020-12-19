@@ -4,13 +4,11 @@ public class NightStay {
     private int checkInTime;
     private int checkOutTime;
     private int price;
-    private int count;
 
-    public NightStay(int checkInTime, int checkOutTime, int price, int count) {
+    public NightStay(int checkInTime, int checkOutTime, int price) {
         this.checkInTime = checkInTime;
         this.checkOutTime = checkOutTime;
         this.price = price;
-        this.count = count;
     }
 
     public int getCheckInTime() {
@@ -37,11 +35,4 @@ public class NightStay {
         this.price = price;
     }
 
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
 }

@@ -2,52 +2,59 @@ package org.haeboja.backend.dto.room;
 
 import org.springframework.stereotype.Component;
 
-
-
 @Component
 public class Room {
     private long id;
     private long houseId;
     private String name;
-    private String style;
+    private int type;
     private DayStay dayStay;
     private NightStay nightStay;
     private byte[] photos;
     private String info;
+    private int count;
+
+    public static final int ONLY_NIGHT_STAY = 1;
+    public static final int DAY_AND_NIGHT_STAY = 2; // motel
 
     public Room() {}
 
-    public Room(long id, long houseId, String name, String style, DayStay dayStay, byte[] photos, String info) {
+    public Room(long id, long houseId, String name, int type, DayStay dayStay, byte[] photos, String info, int count) {
         this.id = id;
         this.houseId = houseId;
         this.name = name;
-        this.style = style;
+        this.type = type;
         this.photos = photos;
         this.info = info;
         this.dayStay = dayStay;
         this.nightStay = null;
+        this.count = count;
+
     }
 
-    public Room(long id, long houseId, String name, String style, NightStay nightStay, byte[] photos, String info) {
+    public Room(long id, long houseId, String name, int type, NightStay nightStay, byte[] photos, String info, int count) {
         this.id = id;
         this.houseId = houseId;
         this.name = name;
-        this.style = style;
+        this.type = type;
         this.photos = photos;
         this.info = info;
         this.dayStay = null;
         this.nightStay = nightStay;
+        this.count = count;
+
     }
 
-    public Room(long id, long houseId, String name, String style, DayStay dayStay, NightStay nightStay, byte[] photos, String info) {
+    public Room(long id, long houseId, String name, int type, DayStay dayStay, NightStay nightStay, byte[] photos, String info, int count) {
         this.id = id;
         this.houseId = houseId;
         this.name = name;
-        this.style = style;
+        this.type = type;
         this.dayStay = dayStay;
         this.nightStay = nightStay;
         this.photos = photos;
         this.info = info;
+        this.count = count;
     }
 
     public long getId() {
@@ -74,12 +81,12 @@ public class Room {
         this.name = name;
     }
 
-    public String getStyle() {
-        return style;
+    public int getType() {
+        return type;
     }
 
-    public void setStyle(String style) {
-        this.style = style;
+    public void setType(int type) {
+        this.type = type;
     }
 
     public DayStay getDayStay() {
@@ -112,5 +119,13 @@ public class Room {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }

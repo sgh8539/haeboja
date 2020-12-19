@@ -13,9 +13,13 @@ public class RoomService {
     @Autowired
     RoomRepository roomRepository;
 
+    @Autowired
+    ReservationService reservationService;
+
     public List<Room> getRoomsByHouseId(long houseId, Date from, Date to){
         List<Room> rooms = roomRepository.getRoomsByHouseId(houseId);
         for (Room room: rooms) {
+
 
         }
 
