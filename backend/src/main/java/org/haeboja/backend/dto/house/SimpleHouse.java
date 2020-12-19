@@ -8,16 +8,18 @@ public class SimpleHouse {
     private String name;
     private String address;
     private double score;
-    private int lowestPrice;
+    private int dayStayLowestPrice;
+    private int nightStayLowestPrice;
 
     public SimpleHouse() {}
 
-    public SimpleHouse(long id, String name, String address, double score, int lowerPrice) {
+    public SimpleHouse(long id, String name, String address, double score, int lowerPrice, int nightStayLowestPrice) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.score = score;
-        this.lowestPrice = lowerPrice;
+        this.dayStayLowestPrice = lowerPrice;
+        this.nightStayLowestPrice = nightStayLowestPrice;
     }
 
     public long getId() {
@@ -52,11 +54,19 @@ public class SimpleHouse {
         this.score = score;
     }
 
-    public int getLowestPrice() {
-        return lowestPrice;
+    public int getDayStayLowestPrice() {
+        return dayStayLowestPrice;
     }
 
-    public void setLowestPrice(int lowestPrice) {
-        this.lowestPrice = lowestPrice;
+    public void setDayStayLowestPrice(int dayStayLowestPrice) {
+        this.dayStayLowestPrice = dayStayLowestPrice;
+    }
+
+    public int getNightStayLowestPrice() {
+        return nightStayLowestPrice;
+    }
+
+    public void setNightStayLowestPrice(int nightStayLowestPrice) {
+        this.nightStayLowestPrice = nightStayLowestPrice;
     }
 }

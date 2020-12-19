@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -63,5 +64,43 @@ public class JdbcRoomRepository implements RoomRepository {
                         )
 
         );
+    }
+
+    public int getDayStayLowestPriceByHouseId(long houseId) {
+        List<Integer> dayStayPriceList = new ArrayList<>();
+        jdbcTemplate.query(
+                "select DAY_STAY_PRICE from ROOM where houseId = ?",
+                new Object[]{houseId},
+                (rs, rowNum) ->
+                        dayStayPriceList.add(rs.getInt("DAY_STAY_PRICE"))
+        );
+
+        int lowestPrice = Integer.MAX_VALUE;
+        for (int dayStayPrice: dayStayPriceList) {
+            if (dayStayPrice < lowestPrice) {
+                lowestPrice = dayStayPrice;
+            }
+        }
+
+        return lowestPrice;
+    }
+
+    public int getNightStayLowestPriceByHouseId(long houseId) {
+        List<Integer> nightStayPriceList = new ArrayList<>();
+        jdbcTemplate.query(
+                "select NIGHT_STAY_PRICE from ROOM where houseId = ?",
+                new Object[]{houseId},
+                (rs, rowNum) ->
+                        nightStayPriceList.add(rs.getInt("NIGHT_STAY_PRICE"))
+        );
+
+        int lowestPrice = Integer.MAX_VALUE;
+        for (int nightStayPrice: nightStayPriceList) {
+            if (nightStayPrice < lowestPrice) {
+                lowestPrice = nightStayPrice;
+            }
+        }
+
+        return lowestPrice;
     }
 }
