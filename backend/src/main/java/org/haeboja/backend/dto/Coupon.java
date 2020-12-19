@@ -7,6 +7,7 @@ import java.util.Date;
 @Component
 public class Coupon {
     private long id;
+    private String userId;
     private String name;
     private int discount;
     private Date fromDate;
@@ -15,8 +16,9 @@ public class Coupon {
 
     public Coupon() {}
 
-    public Coupon(long id, String name, int discount, Date fromDate, Date toDate, String usableHouses) {
+    public Coupon(long id, String userId, String name, int discount, Date fromDate, Date toDate, String usableHouses) {
         this.id = id;
+        this.userId = userId;
         this.name = name;
         this.discount = discount;
         this.fromDate = fromDate;
@@ -31,6 +33,10 @@ public class Coupon {
     public void setId(long id) {
         this.id = id;
     }
+
+    public String userId() { return userId; }
+
+    public void setUserId() { this.userId = userId; }
 
     public String getName() {
         return name;

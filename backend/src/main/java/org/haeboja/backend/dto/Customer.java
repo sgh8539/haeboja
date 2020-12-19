@@ -4,24 +4,25 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Customer {
-    private long id;
+    private String id;
     private String name;
     private String nickname;
     private String phoneNumber;
 
     public Customer() {}
 
-    public Customer(String name, String nickname, String phoneNumber) {
+    public Customer(String id, String name, String nickname, String phoneNumber) {
+        this.id = id;
         this.name = name;
         this.nickname = nickname;
         this.phoneNumber = phoneNumber;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
