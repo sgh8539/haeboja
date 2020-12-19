@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a href="/#/product/home/1">
+    <a @click="goToItemList">
       <span :class="linkItem.imageClass"></span><p>{{linkItem.title}}</p>
     </a>
   </li>
@@ -17,6 +17,9 @@ export default {
     }
   },
   methods: {
+    goToItemList(){
+      this.$router.push({name:"ItemHomePage",params:{id:'2'} })
+    }
   }
 }
 </script>

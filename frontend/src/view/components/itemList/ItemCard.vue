@@ -1,6 +1,6 @@
 <template>
-  <li class="list_2 adcno1">
-    <a href="#">
+  <li  class="list_2 adcno1">
+    <a @click="gotoDetail" >
       <p class="pic">
         <img style="margin-top: -159px;display: block;"
              class="lazy align" src="../../../assets/image/list_page/r1.jpg" alt="종로 호텔H">
@@ -37,6 +37,9 @@
       return {}
     },
     methods: {
+      gotoDetail(){
+        this.$router.push({ name:"detailPage",params:{id:'1'}  })
+      }
     }
   }
 </script>

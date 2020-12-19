@@ -3,7 +3,7 @@ import homePage from '../view/pages/HomePage.vue'
 import loginPage from '../view/pages/loginPage.vue'
 import ItemSearchPage from '../view/pages/ItemSearchPage'
 import ItemHomePage from '../view/pages/ItemHomePage'
-
+import DetailPage from '../view/pages/DetailPage'
 
 
 export const routes = [
@@ -11,11 +11,11 @@ export const routes = [
     path: '/',
     name: 'homepage',
     component: homePage,
-    meta: { title: 'title' }
+    meta: { title: 'home' }
   },
   {
     path: '/login',
-    name: 'loginpage',
+    name: 'loginPage',
     component: loginPage,
     meta: { title: 'login' }
   },
@@ -23,15 +23,20 @@ export const routes = [
     path: '/product/home/:id',
     name: 'ItemHomePage',
     component: ItemHomePage,
-    meta: { title: 'login' }
+    meta: { title: 'home' }
   },
   {
     path: '/product/search/:id',
     name: 'ItemSearchPage',
     component: ItemSearchPage,
-    meta: { title: 'login' }
+    meta: { title: 'item' }
   },
-
+  {
+    path: '/product/detail/:id',
+    name: 'detailPage',
+    component: DetailPage,
+    meta: { title: 'detail' }
+  },
   // {
   //   path: '/news',
   //   name: 'news',

@@ -28,7 +28,7 @@
     <div class="event_main">
       <h2>이벤트</h2>
         <swiper>
-          <div class='swi' v-for="n in 6" >
+          <div class='swi' v-for="n in 6" :key="n">
             <img :src="getImage(n)">
           </div>
         </swiper>
