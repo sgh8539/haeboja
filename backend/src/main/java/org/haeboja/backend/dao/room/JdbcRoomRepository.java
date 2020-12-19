@@ -18,7 +18,7 @@ public class JdbcRoomRepository implements RoomRepository {
     @Override
     public long save(Room room) {
         return jdbcTemplate.update(
-                "insert into room (id, houseId, name, style, closeTime, usageDuration, dayStayPrice, dayStayCount, checkInTime, checkOutTime, nightStayPrice, nightStayCount, photos, info) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "insert into room (id, house_id, name, style, close_time, usage_duration, day_stay_price, day_stay_count, check_in_time, check_out_time, night_stay_price, night_stay_count, photos, info) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 room.getId(),
                 room.getHouseId(),
                 room.getName(),
@@ -39,25 +39,25 @@ public class JdbcRoomRepository implements RoomRepository {
     @Override
     public List<Room> getRoomsByHouseId(long houseId) {
         return jdbcTemplate.query(
-                "select * from room where houseId = ?",
+                "select * from room where house_id = ?",
                 new Object[]{houseId},
                 (rs, rowNum) ->
                         new Room(
                                 rs.getLong("id"),
-                                rs.getLong("houseId"),
+                                rs.getLong("house_id"),
                                 rs.getString("name"),
                                 rs.getString("style"),
                                 new DayStay(
-                                        rs.getInt("closeTime"),
-                                        rs.getInt("usageDuration"),
-                                        rs.getInt("dayStayPrice"),
-                                        rs.getInt("dayStayCount")
+                                        rs.getInt("close_time"),
+                                        rs.getInt("usage_duration"),
+                                        rs.getInt("day_stay_price"),
+                                        rs.getInt("day_stay_count")
                                 ),
                                 new NightStay(
-                                        rs.getInt("checkInTime"),
-                                        rs.getInt("checkOutTime"),
-                                        rs.getInt("nightStayPrice"),
-                                        rs.getInt("nightStayCount")
+                                        rs.getInt("check_in_time"),
+                                        rs.getInt("check_out_time"),
+                                        rs.getInt("night_stay_price"),
+                                        rs.getInt("night_stay_count")
                                 ),
                                 rs.getBytes("photos"),
                                 rs.getString("info")
@@ -69,10 +69,10 @@ public class JdbcRoomRepository implements RoomRepository {
     public int getDayStayLowestPriceByHouseId(long houseId) {
         List<Integer> dayStayPriceList = new ArrayList<>();
         jdbcTemplate.query(
-                "select DAY_STAY_PRICE from ROOM where houseId = ?",
+                "select day_stay_price from room where house_id = ?",
                 new Object[]{houseId},
                 (rs, rowNum) ->
-                        dayStayPriceList.add(rs.getInt("DAY_STAY_PRICE"))
+                        dayStayPriceList.add(rs.getInt("day_stay_price"))
         );
 
         int lowestPrice = Integer.MAX_VALUE;
@@ -88,10 +88,10 @@ public class JdbcRoomRepository implements RoomRepository {
     public int getNightStayLowestPriceByHouseId(long houseId) {
         List<Integer> nightStayPriceList = new ArrayList<>();
         jdbcTemplate.query(
-                "select NIGHT_STAY_PRICE from ROOM where houseId = ?",
+                "select night_stay_price from room where house_id = ?",
                 new Object[]{houseId},
                 (rs, rowNum) ->
-                        nightStayPriceList.add(rs.getInt("NIGHT_STAY_PRICE"))
+                        nightStayPriceList.add(rs.getInt("night_stay_price"))
         );
 
         int lowestPrice = Integer.MAX_VALUE;
