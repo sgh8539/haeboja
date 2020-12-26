@@ -9,10 +9,10 @@
             <div class="gallery_pc">
               <!-- Swiper -->
               <div class="swiper-container gallery-top swiper-container-fade">
-                <ul class="swiper-wrapper" style="transition-duration: 0ms;">
-                  <li class="swiper-slide" style="width: 490px; transform: translate3d(0px, 0px, 0px); opacity: 1; transition-duration: 0ms;">
-                    <img src="https://t1.daumcdn.net/cfile/tistory/996682385AD0B8C806" alt="">
-                  </li>
+                <ul class="swiper-wrapper swiper-slide" style="width: 490px;">
+                  <!--<li class="swiper-slide" style="width: 490px;">-->
+                  <img src="https://t1.daumcdn.net/cfile/tistory/996682385AD0B8C806" alt="">
+                  <!--</li>-->
                 </ul>
               </div>
               <!-- Swiper -->
@@ -32,8 +32,8 @@
                 </ul>
               </div>
               <!-- Add Arrows -->
-              <button class="swiper-button-prev" @click="prev" slot="button-prev"></button>
-              <button class="swiper-button-next" @click="next" slot="button-next"></button>
+              <button class="swiper-button-prev_2" @click="prev" slot="button-prev"></button>
+              <button class="swiper-button-next_2" @click="next" slot="button-next"></button>
             </div>
         </div>
         <!-- //left -->
@@ -148,14 +148,11 @@
                   {img: '//image.goodchoice.kr/resize_490x348/adimg_new/63580/11147/6578a09ab0cd722a08ba893c2a6f99de.jpg', alt: ''},
                   {img: '//image.goodchoice.kr/resize_490x348/adimg_new/63580/11147/62d7f6bbd42ea61dc0968bc319ac9ad0.jpg', alt: ''},
                   {img: '//image.goodchoice.kr/resize_490x348/adimg_new/63580/11147/36937f08baa616716af6b36839f728fc.jpg', alt: ''}],
+        imgPage: 1,
         swiperOption: {
           loop: true,
           slidesPerView: 4,
           spaceBetween: 10,
-          effect: "fade",
-          fadeEffect: {  
-            crossFade: true
-          }  ,
           pagination: {
             el: ".swiper-pagination",
             clickable: true
@@ -187,9 +184,13 @@
       },
       prev() {
         this.$refs.mySwiper.$swiper.slideNext();
+        this.imgPage += 1;
+        this.imgPage %= this.imgList.length;
       },
       next() {
         this.$refs.mySwiper.$swiper.slidePrev();
+        this.imgPage -= 1;
+        this.imgPage %= this.imgList.length;
       }
     },
     mounted() {},
@@ -378,7 +379,7 @@
     background-repeat: no-repeat;
   }
 
-  .gallery_pc .swiper-button-next {
+  .gallery_pc .swiper-button-next_2 {
     position: absolute;
     z-index: 9999;
     cursor: pointer;
@@ -393,7 +394,7 @@
     transform: rotate(180deg);
     border:none;
   }
-  .gallery_pc .swiper-button-prev {
+  .gallery_pc .swiper-button-prev_2 {
     position: absolute;
     z-index: 9999;
     cursor: pointer;
