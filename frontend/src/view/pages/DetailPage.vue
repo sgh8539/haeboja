@@ -11,7 +11,7 @@
               <div class="swiper-container gallery-top swiper-container-fade">
                 <ul class="swiper-wrapper swiper-slide" style="width: 490px;">
                   <!--<li class="swiper-slide" style="width: 490px;">-->
-                  <img src="https://t1.daumcdn.net/cfile/tistory/996682385AD0B8C806" alt="">
+                  <img :src="imgList[imgPage].img" alt="">
                   <!--</li>-->
                 </ul>
               </div>
@@ -20,14 +20,15 @@
                 <ul class="swiper-wrapper" style="transition-duration: 0ms;">
                   <swiper 
                     ref="mySwiper" 
-                    class="swiper-slide"
+                    class="swiper-slide" 
                     :options="swiperOption" 
+                    @click-slide="onSwiperClickSlide" 
                   >
-                    <swiper-slide v-for="item in imgList" :key="item" class="">
+                    <swiper-slide v-for="(item, index) in imgList" :key="item" :index="index">
                       <img :src="item.img" @alt=item.alt style="width:115px;">
                     </swiper-slide>
                     
-                    <div class="swiper-pagination" slot="pagination"></div>
+                    <!--<div class="swiper-pagination" slot="pagination"></div>-->
                   </swiper>
                 </ul>
               </div>
@@ -119,6 +120,9 @@
           case(2): return DefaultInfo
           case(3): return RoomReview
         }
+      },
+      slidesLen() {
+        return this.imgList.length;
       }
     },
     data () {
@@ -148,15 +152,15 @@
                   {img: '//image.goodchoice.kr/resize_490x348/adimg_new/63580/11147/6578a09ab0cd722a08ba893c2a6f99de.jpg', alt: ''},
                   {img: '//image.goodchoice.kr/resize_490x348/adimg_new/63580/11147/62d7f6bbd42ea61dc0968bc319ac9ad0.jpg', alt: ''},
                   {img: '//image.goodchoice.kr/resize_490x348/adimg_new/63580/11147/36937f08baa616716af6b36839f728fc.jpg', alt: ''}],
-        imgPage: 1,
+        imgPage: 0,
         swiperOption: {
           loop: true,
           slidesPerView: 4,
           spaceBetween: 10,
-          pagination: {
+          /*pagination: {
             el: ".swiper-pagination",
             clickable: true
-          },
+          },*/
           breakpoints: {
             1024: {
               slidesPerView: 4,
@@ -184,13 +188,24 @@
       },
       prev() {
         this.$refs.mySwiper.$swiper.slideNext();
-        this.imgPage += 1;
-        this.imgPage %= this.imgList.length;
+        if(this.imgPage >= this.slidesLen - 1) {
+          this.imgPage = 0;
+        }
+        else {
+          this.imgPage += 1;
+        }
       },
       next() {
         this.$refs.mySwiper.$swiper.slidePrev();
-        this.imgPage -= 1;
-        this.imgPage %= this.imgList.length;
+        if(this.imgPage <= 0) {
+          this.imgPage = this.slidesLen - 1;
+        }
+        else {
+          this.imgPage -= 1;
+        }
+      },
+      handleClickSlide(v) {
+        console.log(1111, v)
       }
     },
     mounted() {},
