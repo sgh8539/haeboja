@@ -6,6 +6,8 @@ import store from './store'
 
 import './assets/css/haeboja.css'
 import './assets/fonts/bebasneue.css'
+import awesomeSwiper from 'vue-awesome-swiper'
+import "swiper/swiper-bundle.css"
 
 Vue.config.productionTip = false
 
@@ -22,3 +24,5 @@ new Vue({
   // },
   render: h => h(AppLayout)
 }).$mount('#app')
+
+Vue.use(awesomeSwiper)
