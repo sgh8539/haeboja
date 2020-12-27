@@ -4,6 +4,7 @@ import loginPage from '../view/pages/loginPage.vue'
 import ItemSearchPage from '../view/pages/ItemSearchPage'
 import ItemHomePage from '../view/pages/ItemHomePage'
 import DetailPage from '../view/pages/DetailPage'
+import ReservationPage from '../view/pages/DetailPage'
 
 
 export const routes = [
@@ -36,6 +37,12 @@ export const routes = [
     name: 'detailPage',
     component: DetailPage,
     meta: { title: 'detail' }
+  },
+  {
+    path: '/reservation/checkout/:token?',
+    name: 'reservationCehckout',
+    component: ReservationPage,
+    meta: { title: 'reserve' }
   },
   // {
   //   path: '/news',

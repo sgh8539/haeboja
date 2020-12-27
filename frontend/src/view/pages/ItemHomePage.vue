@@ -2,12 +2,15 @@
   <div class="listpage recommend_wrap bg_area_01">
     <item-list-header :itemData="itemListHeaderData"></item-list-header>
     <item-list :itemList="itemList"></item-list>
+    <h1>{{index}}</h1>
   </div>
 </template>
 
 <script>
   import ItemListHeader from '../components/itemList/ItemListHeader.vue'
   import ItemList from '../components/itemList/ItemList'
+  import {getDetailList} from '../../services/HaebojaService'
+
   export default {
     name: 'ItemHomePage',
     components: {
@@ -16,6 +19,7 @@
     },
     data () {
       return {
+        index: this.$route.params.id,
         itemListHeaderData:{
           location:"서울지역편"
         },
@@ -58,6 +62,21 @@
       }
     },
     methods: {
+
+
+    },
+    mounted () {
+      getDetailList(this.index)
+        .then(res=>{
+          // for i
+          // id;
+          // name;
+          // private String address;
+          // private double score;
+          // private int dayStayLowestPrice;
+          // private int nightStayLowestPrice;
+        })
+        .catch(err=>console.log(err));
     }
   }
 </script>

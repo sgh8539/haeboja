@@ -4,13 +4,18 @@ import AppLayout from './App.vue'
 import router from './router'
 import store from './store'
 
+import axios from 'axios'
+
 import './assets/css/haeboja.css'
 import './assets/fonts/bebasneue.css'
 import awesomeSwiper from 'vue-awesome-swiper'
 import "swiper/swiper-bundle.css"
 
-Vue.config.productionTip = false
+axios.defaults.baseURL = 'http://localhost:8081'
+axios.defaults.headers.common['Authorization'] = 'something'
+axios.defaults.headers.get['Accepts'] = 'application/json'
 
+Vue.config.productionTip = false
 new Vue({
   name: 'Root',
   router,
