@@ -1,6 +1,7 @@
 package org.haeboja.backend.dto.house;
 
 import org.haeboja.backend.dto.Event;
+import org.haeboja.backend.dto.Review;
 import org.haeboja.backend.dto.room.Room;
 import org.springframework.stereotype.Component;
 
@@ -11,12 +12,14 @@ public class HouseDetail {
     House house;
     List<Event> events;
     List<Room> rooms;
+    List<Review> reviews;
 
     public HouseDetail() {}
 
-    public HouseDetail(House house, List<Event> events, List<Room> rooms){
+    public HouseDetail(House house, List<Event> events, List<Room> rooms, List<Review> reviews){
         this.house = house;
         this.events = events;
         this.rooms = rooms;
+        this.reviews = reviews;
     }
 }

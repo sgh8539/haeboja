@@ -7,6 +7,7 @@ import org.haeboja.backend.dto.house.SimpleHouse;
 import org.haeboja.backend.dto.room.Room;
 import org.haeboja.backend.service.HouseService;
 import org.haeboja.backend.service.EventService;
+import org.haeboja.backend.service.ReviewService;
 import org.haeboja.backend.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -30,6 +31,9 @@ public class HouseController {
 
     @Autowired
     private EventService eventService;
+
+    @Autowired
+    private ReviewService reviewService;
 
     @GetMapping("/search/")
     List<SimpleHouse> getMotels() {
@@ -75,8 +79,9 @@ public class HouseController {
         House house = houseService.getHousesById(houseId);
         List<Event> events = eventService.getEventsByHouseId(houseId);
         List<Room> rooms = roomService.getRoomsByHouseId(houseId, from, to);
+        List<Review> reviews = reviewService.getReviewsByHouseId(houseId);
 
-        HouseDetail houseDetail = new HouseDetail(house, events, rooms);
+        HouseDetail houseDetail = new HouseDetail(house, events, rooms, reviews);
 
         return houseDetail;
     }
