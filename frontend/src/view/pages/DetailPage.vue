@@ -18,16 +18,16 @@
               <!-- Swiper -->
               <div class="swiper-container gallery-thumbs">
                 <ul class="swiper-wrapper" style="transition-duration: 0ms;">
-                  <swiper 
-                    ref="mySwiper" 
-                    class="swiper-slide" 
-                    :options="swiperOption" 
-                    @click-slide="onSwiperClickSlide" 
+                  <swiper
+                    ref="mySwiper"
+                    class="swiper-slide"
+                    :options="swiperOption"
+                    @click-slide="onSwiperClickSlide"
                   >
                     <swiper-slide v-for="(item, index) in imgList" :key="item" :index="index">
                       <img :src="item.img" @alt=item.alt style="width:115px;">
                     </swiper-slide>
-                    
+
                     <!--<div class="swiper-pagination" slot="pagination"></div>-->
                   </swiper>
                 </ul>
@@ -73,8 +73,8 @@
                         <li onclick="pop_mem();">현장 결제시 룸 업그레이드</li>
                     </ul>
                 </section>
-            </div>    
-            
+            </div>
+
             <!-- 사장님 한마디 & 추천이유 -->
             <div class="comment">
                 <strong>사장님 한마디</strong>
@@ -208,7 +208,9 @@
         console.log(1111, v)
       }
     },
-    mounted() {},
+    mounted() {
+
+    },
     created() {}
   }
 </script>
