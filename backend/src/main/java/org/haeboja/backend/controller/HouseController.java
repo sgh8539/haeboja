@@ -5,6 +5,7 @@ import org.haeboja.backend.dto.house.House;
 import org.haeboja.backend.dto.house.HouseDetail;
 import org.haeboja.backend.dto.house.SimpleHouse;
 import org.haeboja.backend.dto.room.Room;
+import org.haeboja.backend.dto.room.RoomDetail;
 import org.haeboja.backend.service.HouseService;
 import org.haeboja.backend.service.EventService;
 import org.haeboja.backend.service.ReviewService;
@@ -78,7 +79,7 @@ public class HouseController {
                                @RequestParam("sel_date2") @DateTimeFormat(pattern = "yyyy-MM-dd") Date to) {
         House house = houseService.getHousesById(houseId);
         List<Event> events = eventService.getEventsByHouseId(houseId);
-        List<Room> rooms = roomService.getRoomsByHouseId(houseId, from, to);
+        List<RoomDetail> rooms = roomService.getAvailableRoomsByHouseId(houseId, from, to);
         List<Review> reviews = reviewService.getReviewsByHouseId(houseId);
 
         HouseDetail houseDetail = new HouseDetail(house, events, rooms, reviews);

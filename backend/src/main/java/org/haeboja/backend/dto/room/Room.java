@@ -14,8 +14,8 @@ public class Room {
     private String info;
     private int count;
 
-    public static final int ONLY_NIGHT_STAY = 1;
-    public static final int DAY_AND_NIGHT_STAY = 2; // motel
+    public static final int TYPE_NIGHT_STAY_ONLY = 1;
+    public static final int TYPE_DAY_STAY_AND_NIGHT_STAY = 2; // motel
 
     public Room() {}
 
