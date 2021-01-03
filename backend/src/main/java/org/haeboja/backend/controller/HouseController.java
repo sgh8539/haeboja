@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/product")
+@RequestMapping(value = "/product", produces = "application/json; charset=utf-8")
 public class HouseController {
 
     @Autowired
