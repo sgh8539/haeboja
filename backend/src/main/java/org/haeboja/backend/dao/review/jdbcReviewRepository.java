@@ -35,8 +35,8 @@ public class jdbcReviewRepository implements ReviewRepository {
                         new Review(
                                 rs.getLong("id"),
                                 rs.getString("author"),
-                                rs.getLong("houseId"),
-                                rs.getString("roomName"),
+                                rs.getLong("house_id"),
+                                rs.getString("room_name"),
                                 rs.getDouble("score"),
                                 rs.getString("title"),
                                 rs.getString("contents")
