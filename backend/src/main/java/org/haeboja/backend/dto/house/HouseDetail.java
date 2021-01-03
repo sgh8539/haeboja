@@ -23,4 +23,36 @@ public class HouseDetail {
         this.rooms = rooms;
         this.reviews = reviews;
     }
+
+    public House getHouse() {
+        return house;
+    }
+
+    public void setHouse(House house) {
+        this.house = house;
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
+    }
+
+    public List<RoomDetail> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(List<RoomDetail> rooms) {
+        this.rooms = rooms;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 }

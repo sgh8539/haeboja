@@ -78,11 +78,12 @@ public class HouseController {
                                @RequestParam("sel_date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date from,
                                @RequestParam("sel_date2") @DateTimeFormat(pattern = "yyyy-MM-dd") Date to) {
         House house = houseService.getHousesById(houseId);
-        List<Event> events = eventService.getEventsByHouseId(houseId);
+        //List<Event> events = eventService.getEventsByHouseId(houseId);
         List<RoomDetail> rooms = roomService.getAvailableRoomsByHouseId(houseId, from, to);
-        List<Review> reviews = reviewService.getReviewsByHouseId(houseId);
-
-        HouseDetail houseDetail = new HouseDetail(house, events, rooms, reviews);
+        //List<Review> reviews = reviewService.getReviewsByHouseId(houseId);
+        HouseDetail houseDetail = new HouseDetail();
+        houseDetail.setHouse(house);
+        houseDetail.setRooms(rooms);
 
         return houseDetail;
     }
